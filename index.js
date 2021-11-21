@@ -30,7 +30,7 @@ app.use('/api/auth', auth);
 
 // iniciar la app
 async function init() {
-    await server.listen(port, ()=> {
+    await server.listen(port,'0.0.0.0', ()=> {
         console.log('server listo!!!');
     })
 }
