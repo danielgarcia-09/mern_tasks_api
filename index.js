@@ -16,7 +16,7 @@ conectarDB();
 app.use( express.json({ extended: true }) );
 app.use( cors() );
 //* Puerto de la app
-const PORT = process.env.PORT || 4000;
+const port = process.env.PORT || 4000;
 
 //* Rutas de la pp
 app.use('/api/usuarios', usuarios);
@@ -25,8 +25,8 @@ app.use('/api/tareas', tareas);
 app.use('/api/auth', auth);
 
 // iniciar la app
-app.listen(PORT, ()=> {
-    console.log(`http://localhost:${PORT}`);
+app.listen(port, ()=> {
+    console.log(`http://localhost:${port}`);
 })
 
 module.exports = app;
