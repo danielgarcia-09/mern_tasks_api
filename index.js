@@ -25,7 +25,7 @@ app.use('/api/tareas', tareas);
 app.use('/api/auth', auth);
 
 // iniciar la app
-app.listen(port, ()=> {
+app.listen(port,'0.0.0.0', ()=> {
     console.log(`http://localhost:${port}`);
 })
 
