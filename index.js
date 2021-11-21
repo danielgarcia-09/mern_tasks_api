@@ -20,7 +20,7 @@ conectarDB();
 app.use( express.json({ extended: true }) );
 app.use( cors() );
 //* Puerto de la app
-const port = process.env.PORT || 4000;
+const port = process.env.PORT || 3000;
 
 //* Rutas de la pp
 app.use('/api/usuarios', usuarios);
