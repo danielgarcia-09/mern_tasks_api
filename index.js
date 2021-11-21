@@ -6,8 +6,12 @@ const auth = require('./routes/auth');
 const conectarDB = require('./config/db');
 const cors = require('cors');
 
-//* Crear servidor
+
+//* Crear app
 const app = express();
+
+//* Crear Servidor
+const server = require('http').Server(app);
 
 //* Conectar DB
 conectarDB();
@@ -25,8 +29,11 @@ app.use('/api/tareas', tareas);
 app.use('/api/auth', auth);
 
 // iniciar la app
-app.listen(port,'0.0.0.0', ()=> {
-    console.log(`http://localhost:${port}`);
-})
+async function init() {
+    await server.listen(port, ()=> {
+        console.log('server listo!!!');
+    })
+}
+init();
 
 module.exports = app;
